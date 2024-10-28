@@ -2,9 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CafeObject : MonoBehaviour
-{
+public class CafeObject : MonoBehaviour {
+
+
+    [SerializeField] private CafeObjectSO cafeObjectSO;
+
+
     private ICafeObjectParent cafeObjectParent;
+
+
+    public CafeObjectSO GetCafeObjectSO() {
+        return cafeObjectSO;
+    }
 
     public void SetCafeObjectParent(ICafeObjectParent cafeObjectParent) {
         if (this.cafeObjectParent != null) {

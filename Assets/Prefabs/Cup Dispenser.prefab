@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3e13fa30a805bffbb711cf531457dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coffeeCupPrefab: {fileID: 2864734359794848449, guid: 6e86253330cbdac299117cfeb4d3b81f,
-    type: 3}
+  cafeObjectSO: {fileID: 11400000, guid: f46e32d17bcb1fe789f83d9d39eb6581, type: 2}
   dispenserFrontPoint: {fileID: 4928592336148177308}
 --- !u!1 &8480027543454241704
 GameObject:

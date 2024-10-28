@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class CupDispenser : MonoBehaviour {
 
-    [SerializeField] private Transform coffeeCupPrefab;
+    // [SerializeField] private Transform coffeeCupPrefab;
+    [SerializeField] private CafeObjectSO cafeObjectSO;
     [SerializeField] private Transform dispenserFrontPoint;
 
     private CafeObject cafeObject;
     
     public void Interact() {
         Debug.Log("Interact!");
-        Transform coffeeCupTransform = Instantiate(coffeeCupPrefab, dispenserFrontPoint);
-        coffeeCupTransform.localPosition = Vector3.zero;
+        Transform cafeObjectTransform = Instantiate(cafeObjectSO.prefab, dispenserFrontPoint);
+        cafeObjectTransform.localPosition = Vector3.zero;
+
+        Debug.Log(cafeObjectTransform.GetComponent<CafeObject>().GetCafeObjectSO().objectName);
     }
 }
