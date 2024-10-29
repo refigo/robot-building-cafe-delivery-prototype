@@ -61,10 +61,10 @@ public class BarisBrewRobotArm : MonoBehaviour, ICafeObjectParent {
         Debug.Log("Rotated 90 degrees");
         isRotating = false;
 
-        // if (cupPicked == true) {
-        //     cafeObject.SetCafeObjectParent(storagy);
-        //     cupPicked = false;
-        // }
+        if (cupPicked == true) {
+            cafeObject.SetCafeObjectParent(storagy);
+            cupPicked = false;
+        }
 
     }
 
