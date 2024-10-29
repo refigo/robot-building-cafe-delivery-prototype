@@ -11,6 +11,7 @@ public class Storagy : MonoBehaviour, ICafeObjectParent  {
     // [SerializeField] private Transform elevatorPosition;
     // [SerializeField] private Transform officePosition;
     [SerializeField] private Transform cafeObjectHoldPoint;
+    [SerializeField] private BarisBrewRobotArm barisBrewRobotArm;
     
 
     // private NavMeshAgent agent;
@@ -30,7 +31,7 @@ public class Storagy : MonoBehaviour, ICafeObjectParent  {
     // Update is called once per frame
     void Update()
     {
-        if (arrivedCoffeePickupPoint == false) {
+        if (barisBrewRobotArm.HasCafeObject() && arrivedCoffeePickupPoint == false) {
             transform.position = Vector3.Lerp(transform.position, coffeePickupPoint.position, Time.deltaTime);
             if (Vector3.Distance(transform.position, coffeePickupPoint.position) < 0.1f) {
                 arrivedCoffeePickupPoint = true;

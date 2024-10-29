@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966483992691285374}
   - component: {fileID: 657415296318868279}
+  - component: {fileID: 3450203180466961649}
   m_Layer: 0
   m_Name: Barisbrew Robot Arm
   m_TagString: Untagged
@@ -26,12 +27,11 @@ Transform:
   m_GameObject: {fileID: 3951000026452621137}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 2.6, z: -5.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 179308954880875712}
-  - {fileID: 8228353846766196329}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &657415296318868279
@@ -48,7 +48,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cupDispenser: {fileID: 0}
   cafeObjectGrabPoint: {fileID: 8228353846766196329}
+  storagy: {fileID: 0}
+  barisBrewRobotArmVisual: {fileID: 5703179054977506363}
   rotationSpeed: 45
+--- !u!95 &3450203180466961649
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951000026452621137}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4631557699924673380
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 4631557699924673380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -0.5680008, y: 0.63999987, z: 0.01599884}
+  m_LocalPosition: {x: -0.57, y: 0.64, z: 0}
   m_LocalScale: {x: 0.30000004, y: 0.8000001, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -184,11 +208,11 @@ Transform:
   m_GameObject: {fileID: 5188507102415633325}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.18, y: 1.26, z: 0}
+  m_LocalPosition: {x: 0.5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 966483992691285374}
+  m_Father: {fileID: 179308954880875712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6266728981933494147
 GameObject:
@@ -200,6 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179308954880875712}
   - component: {fileID: 648753148622927289}
+  - component: {fileID: 5703179054977506363}
   m_Layer: 0
   m_Name: RobotArmVisual
   m_TagString: Untagged
@@ -223,6 +248,7 @@ Transform:
   - {fileID: 7718992481951569444}
   - {fileID: 4362053238343588720}
   - {fileID: 1817170956269314254}
+  - {fileID: 8228353846766196329}
   m_Father: {fileID: 966483992691285374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &648753148622927289
@@ -247,6 +273,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5703179054977506363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6266728981933494147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82afeaea7a249b24eae4977fd398e388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7182686848524939475
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +422,7 @@ Transform:
   m_GameObject: {fileID: 8160524058076862747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -0.5679989, y: 1.6399999, z: 0.01600266}
+  m_LocalPosition: {x: -0.568, y: 1.6399999, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.8, z: 0.29999998}
   m_ConstrainProportionsScale: 0
   m_Children: []

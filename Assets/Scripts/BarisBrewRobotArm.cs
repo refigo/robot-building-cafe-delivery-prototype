@@ -9,6 +9,7 @@ public class BarisBrewRobotArm : MonoBehaviour, ICafeObjectParent {
     [SerializeField] private CupDispenser cupDispenser;
     [SerializeField] private Transform cafeObjectGrabPoint;
     [SerializeField] private Storagy storagy;
+    [SerializeField] private BarisBrewRobotArmVisual barisBrewRobotArmVisual;
 
 
     // public Transform robotArm;
@@ -42,6 +43,8 @@ public class BarisBrewRobotArm : MonoBehaviour, ICafeObjectParent {
         isRotating = false;
 
         if (cupPicked == false) {
+            barisBrewRobotArmVisual.TriggerPlaceCafeObject();
+            yield return new WaitForSeconds(1f);
             cupDispenser.Interact(this);
             cupPicked = true;
         }
@@ -62,6 +65,8 @@ public class BarisBrewRobotArm : MonoBehaviour, ICafeObjectParent {
         isRotating = false;
 
         if (cupPicked == true) {
+            barisBrewRobotArmVisual.TriggerPlaceCafeObject();
+            yield return new WaitForSeconds(1f);
             cafeObject.SetCafeObjectParent(storagy);
             cupPicked = false;
         }
