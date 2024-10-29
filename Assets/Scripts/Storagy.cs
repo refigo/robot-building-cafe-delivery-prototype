@@ -5,12 +5,16 @@ using UnityEngine.AI;
 
 public class Storagy : MonoBehaviour
 {
+
+
     [SerializeField] private float moveSpeed = 3f;
-    // [SerializeField] private Transform coffeePickupPoint;
+    [SerializeField] private Transform coffeePickupPoint;
     // [SerializeField] private Transform elevatorPosition;
     // [SerializeField] private Transform officePosition;
     
+
     // private NavMeshAgent agent;
+
 
     void Start() {
         // agent = GetComponent<NavMeshAgent>();
@@ -24,6 +28,7 @@ public class Storagy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = Vector3.Lerp(transform.position, coffeePickupPoint.position, Time.deltaTime);
         Vector2 inputVector = new Vector2(0, 0);
 
         if (Input.GetKey(KeyCode.W)) {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CupDispenser : MonoBehaviour, ICafeObjectParent {
 
-    // [SerializeField] private Transform coffeeCupPrefab;
+
     [SerializeField] private CafeObjectSO cafeObjectSO;
     [SerializeField] private Transform dispenserFrontPoint;
 
@@ -10,10 +10,10 @@ public class CupDispenser : MonoBehaviour, ICafeObjectParent {
     private CafeObject cafeObject;
 
 
-    public void Interact() {
+    public void Interact(BarisBrewRobotArm barisBrewRobotArm) {
         if (cafeObject == null) {
             Transform cafeObjectTransform = Instantiate(cafeObjectSO.prefab, dispenserFrontPoint);
-            cafeObjectTransform.GetComponent<CafeObject>().SetCafeObjectParent(this);
+            cafeObjectTransform.GetComponent<CafeObject>().SetCafeObjectParent(barisBrewRobotArm);
         } else {
             Debug.Log(cafeObject.GetCafeObjectParent());
         }

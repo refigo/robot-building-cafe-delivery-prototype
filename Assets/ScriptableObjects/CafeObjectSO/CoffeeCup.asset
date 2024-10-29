@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f15faac57bc3c2c5b8d10e126788bb4, type: 3}
   m_Name: CoffeeCup
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 2864734359794848449, guid: 6e86253330cbdac299117cfeb4d3b81f, type: 3}
+  objectName: Coffee Cup

@@ -16,6 +16,9 @@ public class CafeObject : MonoBehaviour {
     }
 
     public void SetCafeObjectParent(ICafeObjectParent cafeObjectParent) {
+        Debug.Log("Setting cafe object parent");
+        Debug.Log(cafeObjectParent);
+
         if (this.cafeObjectParent != null) {
             this.cafeObjectParent.ClearCafeObject();
         }
@@ -23,7 +26,7 @@ public class CafeObject : MonoBehaviour {
         this.cafeObjectParent = cafeObjectParent;
 
         if (cafeObjectParent.HasCafeObject()) {
-            Debug.LogError("Counter already has a CafeObject!");
+            Debug.LogError("CafeObjectParent already has a CafeObject!");
         }
 
         cafeObjectParent.SetCafeObject(this);
