@@ -15,6 +15,7 @@ public class Storagy : MonoBehaviour, ICafeObjectParent  {
 
     // private NavMeshAgent agent;
     private CafeObject cafeObject;
+    private bool arrivedCoffeePickupPoint = false;
 
 
     void Start() {
@@ -29,7 +30,13 @@ public class Storagy : MonoBehaviour, ICafeObjectParent  {
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, coffeePickupPoint.position, Time.deltaTime);
+        if (arrivedCoffeePickupPoint == false) {
+            transform.position = Vector3.Lerp(transform.position, coffeePickupPoint.position, Time.deltaTime);
+            if (Vector3.Distance(transform.position, coffeePickupPoint.position) < 0.1f) {
+                arrivedCoffeePickupPoint = true;
+            }
+        }
+
         Vector2 inputVector = new Vector2(0, 0);
 
         if (Input.GetKey(KeyCode.W)) {

@@ -771,6 +771,7 @@ Transform:
   - {fileID: 1697461310}
   - {fileID: 297915945}
   - {fileID: 366114958}
+  - {fileID: 1194193931}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &832575517
@@ -1207,6 +1208,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1194193930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1194193931}
+  m_Layer: 0
+  m_Name: Barisbrew
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1194193931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194193930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2117512276}
+  m_Father: {fileID: 674823091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1332471047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1606880884784461137, guid: 29bdb15108dc7a08c9a75c84f05a159f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3516936515835219366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08a30852ee450162b0a44506de9676c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1448781461 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4126435587239004853, guid: 254a59a6b560cdddf9dbf76b3e5b2d51,
@@ -1482,6 +1527,37 @@ Transform:
   - {fileID: 979176710}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2117512275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117512276}
+  m_Layer: 0
+  m_Name: CoffeePickupPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2117512276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117512275}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1194193931}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3516936515835219366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1490,11 +1566,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1410577989463098859, guid: 29bdb15108dc7a08c9a75c84f05a159f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1606880884784461137, guid: 29bdb15108dc7a08c9a75c84f05a159f,
         type: 3}
       propertyPath: coffeePickupPoint
       value: 
-      objectReference: {fileID: 674823091}
+      objectReference: {fileID: 2117512276}
     - target: {fileID: 6599116639340497030, guid: 29bdb15108dc7a08c9a75c84f05a159f,
         type: 3}
       propertyPath: m_Name
@@ -1503,17 +1584,17 @@ PrefabInstance:
     - target: {fileID: 7642786574371473788, guid: 29bdb15108dc7a08c9a75c84f05a159f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.05
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 7642786574371473788, guid: 29bdb15108dc7a08c9a75c84f05a159f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7642786574371473788, guid: 29bdb15108dc7a08c9a75c84f05a159f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7642786574371473788, guid: 29bdb15108dc7a08c9a75c84f05a159f,
         type: 3}
@@ -1563,6 +1644,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 674823091}
     m_Modifications:
+    - target: {fileID: 657415296318868279, guid: b7cd93db8c611912eab8f4d696626034,
+        type: 3}
+      propertyPath: storagy
+      value: 
+      objectReference: {fileID: 1332471047}
     - target: {fileID: 657415296318868279, guid: b7cd93db8c611912eab8f4d696626034,
         type: 3}
       propertyPath: cupDispenser
