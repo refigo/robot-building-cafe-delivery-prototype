@@ -8,10 +8,15 @@ public class Storagy : MonoBehaviour, ICafeObjectParent  {
 
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private Transform coffeePickupPoint;
-    // [SerializeField] private Transform elevatorPosition;
-    // [SerializeField] private Transform officePosition;
     [SerializeField] private Transform cafeObjectHoldPoint;
     [SerializeField] private BarisBrewRobotArm barisBrewRobotArm;
+    // [SerializeField] private Transform elevatorPosition;
+    // [SerializeField] private Transform officePosition;
+    
+    [SerializeField] private Elevator elevator;
+    [SerializeField] private int destinationFloor = 7;
+
+    private bool isInElevator = false;
     
 
     // private NavMeshAgent agent;
@@ -60,8 +65,28 @@ public class Storagy : MonoBehaviour, ICafeObjectParent  {
 
         float rotateSpeed = 10f;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
-        
+
+        if (Input.GetKey(KeyCode.E)) {
+            if (!isInElevator && elevator.GetCurrentFloor() == 1 && Vector3.Distance(transform.position, elevator.transform.position) < 10.0f) {
+                RequestElevator();
+            }
+        }
+        if (isInElevator) {
+            if (elevator.isArrived()) {
+                isInElevator = false;
+                transform.position = elevator.transform.position + Vector3.back * 2.0f;
+            } else {
+                transform.position = elevator.transform.position + Vector3.up * 0.2f;
+            }
+        }
     }
+
+    private void RequestElevator() {
+        transform.position = elevator.transform.position + Vector3.up * 0.2f;
+        elevator.MoveToFloor(destinationFloor);
+        isInElevator = true;
+    }
+
 
     public Transform GetCafeObjectFollowTransform() {
         return cafeObjectHoldPoint;

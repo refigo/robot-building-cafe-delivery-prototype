@@ -4,34 +4,47 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Elevator : MonoBehaviour {
-    
+
     
     [SerializeField] private float speed = 20.0f;
-    [SerializeField] private float floorHeight = 10.0f;
-    [SerializeField] private int topFloor = 7;
-    [SerializeField] private int bottomFloor = 1;
-    
-    
-    private int targetFloor;
+    [SerializeField] private float floorHeight = 100.0f / 6.0f;
+    [SerializeField] private int currentFloor = 1;
+    [SerializeField] private int targetFloor = 1;
+
+
     private Vector3 startPosition;
+    private bool isMoving = false;
 
 
     void Start() {
         startPosition = transform.position;
-        targetFloor = topFloor;
     }
 
     void Update() {
-        Vector3 targetPosition = startPosition + Vector3.up * floorHeight * (targetFloor - 1);
+        if (isMoving) {
+            Vector3 targetPosition = startPosition + Vector3.up * floorHeight * (targetFloor - 1);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-        if (transform.position == targetPosition) {
-            if (targetFloor == topFloor) {
-                targetFloor = bottomFloor;
-            } else if (targetFloor == bottomFloor) {
-                targetFloor = topFloor;
+            if (transform.position == targetPosition) {
+                currentFloor = targetFloor;
+                isMoving = false;
             }
         }
     }
+
+    public void MoveToFloor(int floor) {
+        if (floor != currentFloor) {
+            targetFloor = floor;
+            isMoving = true;
+        }
+    }
+
+    public int GetCurrentFloor() {
+        return currentFloor;
+    }
+
+    public bool isArrived() {
+        return !isMoving;
+    }
+
 }
